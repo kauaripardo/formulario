@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMULÁRIO</title>
+</head>
+<body>
+
+    <div>
+        <h2>PREENCHA O FORMULÁRIO</h2>
+        <form action="">
+            <div>
+                <label for="">Nome: 
+                    <input type="text" placeholder="Digite seu nome" name="name">
+                </label>
+            </div>
+            <div>
+                <label for="">E-mail: 
+                    <input type="email" placeholder="Digite seu e-mail">
+                </label>
+            </div>
+            <div>
+                <label for="">CPF: 
+                    <input type="text" class="cpf" autocomplete="off" maxlength="19">
+                    <script>
+                        const inputcpf = document.querySelector('.cpf')
+
+                        inputcpf.addEventListener('keypress', () => {
+                            let inputcpflength = inputcpf.value.length
+
+                       
+                           if(inputcpflength === 3 || inputcpflength === 7){
+                                inputcpf.value += '.'
+                            } else if(inputcpflength === 11){
+                                inputcpf.value += '-'
+                            }
+                        })
+                        
+                    </script>
+                </label>
+            </div>
+            <div>
+                <label for="">Data de nascimento: 
+                    <input type="date">
+                </label>
+            </div>
+            <div>
+                <label for="">Endereço: 
+                    <input type="text" placeholder="Cidade" class="endereco">
+                    <input type="text" placeholder="Bairro" class="endereco">
+                    <input type="text" placeholder="Rua" class="endereco">
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
